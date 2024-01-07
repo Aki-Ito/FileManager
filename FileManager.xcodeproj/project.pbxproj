@@ -18,6 +18,9 @@
 		2C6C344F2B2530A400B88761 /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C344E2B2530A400B88761 /* AddController.swift */; };
 		2C6C347C2B2AC8D600B88761 /* SwiftDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C347B2B2AC8D600B88761 /* SwiftDataService.swift */; };
 		2CC3040C2B499BE7003BC3FC /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3040B2B499BE7003BC3FC /* VideoModel.swift */; };
+		2CC304102B4A8423003BC3FC /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3040E2B4A8423003BC3FC /* VideoCollectionViewCell.swift */; };
+		2CC304112B4A8423003BC3FC /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3040F2B4A8423003BC3FC /* VideoCollectionViewCell.xib */; };
+		2CC304132B4A85FF003BC3FC /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		2C6C344E2B2530A400B88761 /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		2C6C347B2B2AC8D600B88761 /* SwiftDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataService.swift; sourceTree = "<group>"; };
 		2CC3040B2B499BE7003BC3FC /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
+		2CC3040E2B4A8423003BC3FC /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		2CC3040F2B4A8423003BC3FC /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
+		2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,8 @@
 				2C6C34322B21AA8700B88761 /* Main.storyboard */,
 				2C6C34352B21AA8800B88761 /* Assets.xcassets */,
 				2C6C34372B21AA8800B88761 /* LaunchScreen.storyboard */,
+				2CC3040E2B4A8423003BC3FC /* VideoCollectionViewCell.swift */,
+				2CC3040F2B4A8423003BC3FC /* VideoCollectionViewCell.xib */,
 				2C6C343A2B21AA8800B88761 /* Info.plist */,
 			);
 			path = FileManager;
@@ -102,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				2C6C344E2B2530A400B88761 /* AddController.swift */,
+				2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -166,6 +175,7 @@
 			files = (
 				2C6C34392B21AA8800B88761 /* LaunchScreen.storyboard in Resources */,
 				2C6C34362B21AA8800B88761 /* Assets.xcassets in Resources */,
+				2CC304112B4A8423003BC3FC /* VideoCollectionViewCell.xib in Resources */,
 				2C6C34342B21AA8700B88761 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +187,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CC304102B4A8423003BC3FC /* VideoCollectionViewCell.swift in Sources */,
 				2C6C347C2B2AC8D600B88761 /* SwiftDataService.swift in Sources */,
+				2CC304132B4A85FF003BC3FC /* VideoListViewController.swift in Sources */,
 				2C6C34312B21AA8700B88761 /* ViewController.swift in Sources */,
 				2C6C342D2B21AA8700B88761 /* AppDelegate.swift in Sources */,
 				2CC3040C2B499BE7003BC3FC /* VideoModel.swift in Sources */,
