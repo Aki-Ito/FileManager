@@ -32,6 +32,17 @@ class AddController: UIViewController{
         player.pause()
     }
     
+    
+    @IBAction func sliderValueChanged(_ sender: UISlider) {
+        
+        let seconds = Double(sender.value) * itemDuration
+        let timeScale = CMTimeScale(NSEC_PER_SEC)
+        let time = CMTime(seconds: seconds, preferredTimescale: timeScale)
+        changePosition(time: time)
+    }
+    
+    
+    
     //動画選択・表示
     @IBAction func selectVideo() {
         let picker = UIImagePickerController()
@@ -57,7 +68,7 @@ class AddController: UIViewController{
         }
         do {
             try audioSession.setActive(true)
-            //            print("audio session set active !!")
+            print("audio session set active !!")
         } catch {
         }
     }
@@ -99,6 +110,17 @@ class AddController: UIViewController{
         if itemDuration != 0 {
             slider.value = Float(CMTimeGetSeconds(time) / itemDuration)
         }
+    }
+    
+    private func changePosition(time: CMTime) {
+        let rate = player.rate
+        // いったんplayerをとめる
+        player.rate = 0
+        // 指定した時間へ移動
+        player.seek(to: time, completionHandler: {_ in
+            // playerをもとのrateに戻す(0より大きいならrateの速度で再生される)
+            self.player.rate = rate
+        })
     }
 }
 

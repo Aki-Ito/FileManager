@@ -39,10 +39,10 @@ class FileManagerService{
         }
     }
     
-    public func readFile(fileName: String){
+    public func readFile(fileName: String) -> Data?{
         guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("error: no directory")
-            return
+            return nil
         }
         
         let myAppDirectory = docDirectory.appending(path: "MyAppContents")
@@ -50,8 +50,10 @@ class FileManagerService{
         
         do{
             let fileContents = try Data(contentsOf: fullPath)
+            return fileContents
         }catch{
             print("error: \(error.localizedDescription)")
         }
+        return nil
     }
 }

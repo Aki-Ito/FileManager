@@ -17,6 +17,7 @@
 		2C6C344B2B252F7A00B88761 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C344A2B252F7A00B88761 /* PlayerView.swift */; };
 		2C6C344F2B2530A400B88761 /* AddController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C344E2B2530A400B88761 /* AddController.swift */; };
 		2C6C347C2B2AC8D600B88761 /* SwiftDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6C347B2B2AC8D600B88761 /* SwiftDataService.swift */; };
+		2CC3040C2B499BE7003BC3FC /* VideoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3040B2B499BE7003BC3FC /* VideoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		2C6C344A2B252F7A00B88761 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		2C6C344E2B2530A400B88761 /* AddController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddController.swift; sourceTree = "<group>"; };
 		2C6C347B2B2AC8D600B88761 /* SwiftDataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataService.swift; sourceTree = "<group>"; };
+		2CC3040B2B499BE7003BC3FC /* VideoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		2C6C342B2B21AA8700B88761 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CC3040A2B499BD1003BC3FC /* Model */,
 				2C6C347A2B2AC85100B88761 /* Service */,
 				2C6C344E2B2530A400B88761 /* AddController.swift */,
 				2C6C344A2B252F7A00B88761 /* PlayerView.swift */,
@@ -85,6 +88,14 @@
 				2C6C347B2B2AC8D600B88761 /* SwiftDataService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		2CC3040A2B499BD1003BC3FC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2CC3040B2B499BE7003BC3FC /* VideoModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +172,7 @@
 				2C6C347C2B2AC8D600B88761 /* SwiftDataService.swift in Sources */,
 				2C6C34312B21AA8700B88761 /* ViewController.swift in Sources */,
 				2C6C342D2B21AA8700B88761 /* AppDelegate.swift in Sources */,
+				2CC3040C2B499BE7003BC3FC /* VideoModel.swift in Sources */,
 				2C6C344B2B252F7A00B88761 /* PlayerView.swift in Sources */,
 				2C6C342F2B21AA8700B88761 /* SceneDelegate.swift in Sources */,
 				2C6C344F2B2530A400B88761 /* AddController.swift in Sources */,
