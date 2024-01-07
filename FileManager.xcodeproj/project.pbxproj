@@ -66,9 +66,9 @@
 		2C6C342B2B21AA8700B88761 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CC3040D2B4A776A003BC3FC /* Controller */,
 				2CC3040A2B499BD1003BC3FC /* Model */,
 				2C6C347A2B2AC85100B88761 /* Service */,
-				2C6C344E2B2530A400B88761 /* AddController.swift */,
 				2C6C344A2B252F7A00B88761 /* PlayerView.swift */,
 				2C6C342C2B21AA8700B88761 /* AppDelegate.swift */,
 				2C6C342E2B21AA8700B88761 /* SceneDelegate.swift */,
@@ -96,6 +96,14 @@
 				2CC3040B2B499BE7003BC3FC /* VideoModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		2CC3040D2B4A776A003BC3FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2C6C344E2B2530A400B88761 /* AddController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -14,7 +14,6 @@ class AddController: UIViewController{
     @IBOutlet weak var slider: UISlider!
     var player = AVPlayer()
     var timeObserverToken: Any?
-    
     var itemDuration: Double = 0
     
     override func viewDidLoad() {
@@ -40,8 +39,6 @@ class AddController: UIViewController{
         let time = CMTime(seconds: seconds, preferredTimescale: timeScale)
         changePosition(time: time)
     }
-    
-    
     
     //動画選択・表示
     @IBAction func selectVideo() {
