@@ -15,12 +15,19 @@ class AddController: UIViewController{
     var player = AVPlayer()
     var timeObserverToken: Any?
     var itemDuration: Double = 0
+    let fileManagerService = FileManagerService.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayer()
         setupAudioSession()
         slider.value = 0.0
+    }
+    
+    
+    @IBAction func saveButton(_ sender: Any) {
+        fileManagerService.createFolder()
+        fileManagerService.saveFile(file: <#T##Data#>, fileName: <#T##String#>)
     }
     
     @IBAction func playBtnTapped(_ sender: Any) {

@@ -17,11 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KjO-4d-gRi" customClass="PlayerView" customModule="FileManager" customModuleProvider="target">
-                                <rect key="frame" x="87" y="198" width="240" height="425"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O7c-tF-qS1">
                                 <rect key="frame" x="66" y="646" width="44" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -47,13 +42,22 @@
                                     <action selector="sliderValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="8st-yW-A2L"/>
                                 </connections>
                             </slider>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KjO-4d-gRi" customClass="PlayerView" customModule="FileManager" customModuleProvider="target">
+                                <rect key="frame" x="76" y="164" width="240" height="425"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="iiW-PP-rId">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="save" id="OJf-Zl-rrt"/>
+                            <barButtonItem systemItem="save" id="OJf-Zl-rrt">
+                                <connections>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" id="vzN-WD-LfD"/>
+                                </connections>
+                            </barButtonItem>
                             <barButtonItem systemItem="add" id="4PX-mF-rba">
                                 <connections>
                                     <action selector="selectVideo" destination="BYZ-38-t0r" id="7v9-cl-8ae"/>
@@ -105,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vyi-53-rrh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="-2"/>
+            <point key="canvasLocation" x="2063" y="-2"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YmZ-A8-Jcu">
