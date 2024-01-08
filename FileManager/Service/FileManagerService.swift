@@ -13,6 +13,7 @@ class FileManagerService{
     static let shared = FileManagerService()
     let fileManager = FileManager.default
     
+    //MARK: フォルダを作る
     public func createFolder(){
         guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("error: no directory")
@@ -52,6 +53,7 @@ class FileManagerService{
         }
     }
     
+    //MARK: ファイルの移動
     public func moveItem(sourceURL: URL){
         do{
             guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
@@ -92,6 +94,7 @@ class FileManagerService{
         return nil
     }
     
+    //MARK: EXPORT
     func exportMovie(sourceURL: URL, destinationURL: URL, fileType: AVFileType) -> Void {
 
         Task{
