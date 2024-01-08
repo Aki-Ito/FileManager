@@ -16,6 +16,7 @@ class AddController: UIViewController{
     var timeObserverToken: Any?
     var itemDuration: Double = 0
     let fileManagerService = FileManagerService.shared
+    var movieURL: URL!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +27,14 @@ class AddController: UIViewController{
     
     
     @IBAction func saveButton(_ sender: Any) {
-        fileManagerService.createFolder()
-        fileManagerService.saveFile(file: <#T##Data#>, fileName: <#T##String#>)
+        if fileManagerService.isFolderExists(){
+            fileManagerService.moveItem(sourceURL: self.movieURL)
+            print("onlyMoveItem")
+        }else{
+            fileManagerService.createFolder()
+            fileManagerService.moveItem(sourceURL: self.movieURL)
+            print("createFolder")
+        }
     }
     
     @IBAction func playBtnTapped(_ sender: Any) {
@@ -137,6 +144,7 @@ extension AddController: UIImagePickerControllerDelegate, UINavigationController
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         dismiss(animated: true, completion: nil)
         guard let movieUrl = info[.mediaURL] as? URL else { return }
+        self.movieURL = movieUrl
         
         Task{
             // replacePlayerItem
