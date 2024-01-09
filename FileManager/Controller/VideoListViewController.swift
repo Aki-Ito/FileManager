@@ -72,6 +72,10 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
             cell.imageView.image = image
         }
         cell.layer.cornerRadius = 8
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOffset = CGSize(width: 1, height: 1)
+        cell.layer.shadowOpacity = 0.3
+        cell.layer.masksToBounds = false
         return cell
     }
     
