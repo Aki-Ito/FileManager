@@ -8,6 +8,7 @@
 import UIKit
 import AVFoundation
 
+@available(iOS 17, *)
 class AddController: UIViewController{
     
     @IBOutlet weak var playerView: PlayerView!
@@ -16,6 +17,7 @@ class AddController: UIViewController{
     var timeObserverToken: Any?
     var itemDuration: Double = 0
     let fileManagerService = FileManagerService.shared
+    let swiftDataService = SwiftDataService.shared
     let alertUtil = AlertUtil.shared
     var movieURL: URL!
     
@@ -33,6 +35,16 @@ class AddController: UIViewController{
             let image = self.fileManagerService.takeScreenshot(sourceURL: self.movieURL)
             guard let image = image else {return}
             self.fileManagerService.saveFile(file: image.jpegData(compressionQuality: 0.2)!, fileName: text)
+            
+            guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+                print("error: no directory")
+                return
+            }
+            
+            let myAppDirectory = docDirectory.appending(path: "MyAppContents")
+            let imagePath = myAppDirectory.appending(path: text)
+            let videoPath = myAppDirectory.appending(path: self.movieURL.lastPathComponent)
+            self.swiftDataService.saveVideo(videoPath: videoPath.path(), imagePath: imagePath.path(), title: text)
         }
     }
     
@@ -135,6 +147,7 @@ class AddController: UIViewController{
 }
 
 //MARK: imagePicker(画像、動画選択ツールが閉じた時の挙動)
+@available(iOS 17, *)
 extension AddController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)

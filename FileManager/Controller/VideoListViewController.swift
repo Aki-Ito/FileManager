@@ -8,13 +8,16 @@
 import UIKit
 import SwiftData
 
+@available(iOS 17, *)
 class VideoListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    public var videos = [VideoModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
+        self.fetchData()
     }
     
     private func configureCollectionView(){
@@ -28,16 +31,34 @@ class VideoListViewController: UIViewController {
         collectionView.collectionViewLayout = layout
     }
     
+    private func fetchData(){
+        SwiftDataService.shared.fetchVideo { data, error in
+            if let error{
+                print(error)
+            }
+            
+            if let data{
+                self.videos = data
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+            }
+        }
+    }
+    
 }
 
+@available(iOS 17, *)
 extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return videos.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath)
-        cell.backgroundColor = .red
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCollectionViewCell
+        cell.label.text = videos[indexPath.row].title
+        
+//        cell.imageView.image =
         cell.layer.cornerRadius = 8
         return cell
     }

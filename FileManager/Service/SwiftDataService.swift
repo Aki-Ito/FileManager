@@ -26,9 +26,9 @@ class SwiftDataService{
         }
     }
     
-    func saveVideo(videoPath: String){
+    func saveVideo(videoPath: String, imagePath: String, title: String){
         if let context{
-            let savedVideo = VideoModel(id: UUID().uuidString, videoPath: videoPath, title: "", createdAt: Date(), memo: "")
+            let savedVideo = VideoModel(id: UUID().uuidString, videoPath: videoPath, imagePath: imagePath, title: title, createdAt: Date(), memo: "")
             context.insert(savedVideo)
         }
     }

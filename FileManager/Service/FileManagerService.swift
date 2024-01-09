@@ -9,9 +9,11 @@ import Foundation
 import AVFoundation
 import UIKit
 
+@available(iOS 17, *)
 class FileManagerService{
     static let shared = FileManagerService()
     let fileManager = FileManager.default
+    let swiftDataService = SwiftDataService.shared
     
     //MARK: フォルダを作る
     public func createFolder(){
@@ -26,16 +28,6 @@ class FileManagerService{
         }catch{
             print("Failed Creating Folder: \(error.localizedDescription)")
         }
-    }
-    
-    public func isFolderExists() -> Bool{
-        guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-            print("error: no directory")
-            return false
-        }
-        
-        let myAppDirectory = docDirectory.appending(path: "MyAppContents")
-        return fileManager.fileExists(atPath: myAppDirectory.absoluteString)
     }
     
     //MARK: ファイルの保存
@@ -141,13 +133,13 @@ class FileManagerService{
         let capturingTime: CMTime = CMTimeMakeWithSeconds(Float64(0), preferredTimescale: 1)
         let asset: AVAsset = AVURLAsset(url: sourceURL, options: nil)
         let imageGenerator: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
-        var returnedImage: UIImage? = nil
-        
-        imageGenerator.generateCGImageAsynchronously(for: capturingTime) { image, time, error in
-            if let image{
-                returnedImage = UIImage(cgImage: image)
-            }
-        }
-        return returnedImage
+//        var returnedImage: UIImage? = nil
+//        imageGenerator.generateCGImageAsynchronously(for: capturingTime) { image, time, error in
+//            if let image{
+//                returnedImage = UIImage(cgImage: image)
+//            }
+//        }
+        let image = try! imageGenerator.copyCGImage(at: capturingTime, actualTime: nil)
+        return UIImage(cgImage: image)
     }
 }
