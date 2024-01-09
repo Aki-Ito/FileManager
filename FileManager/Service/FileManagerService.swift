@@ -69,6 +69,7 @@ class FileManagerService{
         }
     }
     
+    //MARK: ファイルの読み込み
     public func readFile(fileName: String) -> Data?{
         guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("error: no directory")

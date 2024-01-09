@@ -12,6 +12,7 @@ import SwiftData
 class VideoListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    let fileManagerService = FileManagerService.shared
     public var videos = [VideoModel]()
     
     override func viewDidLoad() {
@@ -46,6 +47,15 @@ class VideoListViewController: UIViewController {
         }
     }
     
+    private func convertToImage(path: String) -> UIImage?{
+        let data = fileManagerService.readFile(fileName: path)
+        if let data{
+            return UIImage(data: data)
+        }else{
+            return nil
+        }
+    }
+    
 }
 
 @available(iOS 17, *)
@@ -57,8 +67,10 @@ extension VideoListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "videoCell", for: indexPath) as! VideoCollectionViewCell
         cell.label.text = videos[indexPath.row].title
-        
-//        cell.imageView.image =
+        let image = convertToImage(path: videos[indexPath.row].title)
+        if let image{
+            cell.imageView.image = image
+        }
         cell.layer.cornerRadius = 8
         return cell
     }
