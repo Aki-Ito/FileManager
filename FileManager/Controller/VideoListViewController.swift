@@ -21,6 +21,10 @@ class VideoListViewController: UIViewController {
         self.fetchData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.fetchData()
+    }
+    
     private func configureCollectionView(){
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -32,7 +36,7 @@ class VideoListViewController: UIViewController {
         collectionView.collectionViewLayout = layout
     }
     
-    private func fetchData(){
+    func fetchData(){
         SwiftDataService.shared.fetchVideo { data, error in
             if let error{
                 print(error)

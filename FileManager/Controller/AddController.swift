@@ -45,6 +45,7 @@ class AddController: UIViewController{
             let imagePath = myAppDirectory.appending(path: text)
             let videoPath = myAppDirectory.appending(path: self.movieURL.lastPathComponent)
             self.swiftDataService.saveVideo(videoPath: videoPath.path(), imagePath: imagePath.path(), title: text)
+            self.getPreviousController()
         }
     }
     
@@ -143,6 +144,12 @@ class AddController: UIViewController{
             // playerをもとのrateに戻す(0より大きいならrateの速度で再生される)
             self.player.rate = rate
         })
+    }
+    
+    private func getPreviousController(){
+        let preNvc = self.presentingViewController as! UINavigationController
+        let vc = preNvc.viewControllers[0] as! VideoListViewController
+        vc.fetchData()
     }
 }
 
