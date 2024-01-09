@@ -3,4 +3,117 @@
    uuid = "22F25147-3B97-4FC2-A198-6A20491672E1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C1EC18AB-2FEE-4F5F-834F-D1B1F85AA8BE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "saveButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "C1EC18AB-2FEE-4F5F-834F-D1B1F85AA8BE - 42c656602f690cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in FileManager.AddController.saveButton(Any) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "488">
+               </Location>
+               <Location
+                  uuid = "C1EC18AB-2FEE-4F5F-834F-D1B1F85AA8BE - 42c656602f690cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in FileManager.AddController.saveButton(Any) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "496">
+               </Location>
+               <Location
+                  uuid = "C1EC18AB-2FEE-4F5F-834F-D1B1F85AA8BE - 42c656602f690cfc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in FileManager.AddController.saveButton(Any) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "500">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1519F331-E529-418A-A3F9-609DDE5DE181"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "saveButton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "1519F331-E529-418A-A3F9-609DDE5DE181 - 42c656602f693332"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in FileManager.AddController.saveButton(Any) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "1172">
+               </Location>
+               <Location
+                  uuid = "1519F331-E529-418A-A3F9-609DDE5DE181 - 42c656602f693332"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.String) -&gt; () in FileManager.AddController.saveButton(Any) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35"
+                  offsetFromSymbolStart = "796">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

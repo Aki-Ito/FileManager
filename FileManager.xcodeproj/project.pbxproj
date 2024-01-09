@@ -21,6 +21,8 @@
 		2CC304102B4A8423003BC3FC /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC3040E2B4A8423003BC3FC /* VideoCollectionViewCell.swift */; };
 		2CC304112B4A8423003BC3FC /* VideoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CC3040F2B4A8423003BC3FC /* VideoCollectionViewCell.xib */; };
 		2CC304132B4A85FF003BC3FC /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */; };
+		2CF4D6EC2B4C14FD00CD4A46 /* AlertUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4D6EB2B4C14FD00CD4A46 /* AlertUtil.swift */; };
+		2CF4D6EE2B4C158900CD4A46 /* DateFormatUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4D6ED2B4C158900CD4A46 /* DateFormatUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		2CC3040E2B4A8423003BC3FC /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		2CC3040F2B4A8423003BC3FC /* VideoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VideoCollectionViewCell.xib; sourceTree = "<group>"; };
 		2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		2CF4D6EB2B4C14FD00CD4A46 /* AlertUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtil.swift; sourceTree = "<group>"; };
+		2CF4D6ED2B4C158900CD4A46 /* DateFormatUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,7 @@
 		2C6C342B2B21AA8700B88761 /* FileManager */ = {
 			isa = PBXGroup;
 			children = (
+				2CF4D6EA2B4C14EB00CD4A46 /* Util */,
 				2CC3040D2B4A776A003BC3FC /* Controller */,
 				2CC3040A2B499BD1003BC3FC /* Model */,
 				2C6C347A2B2AC85100B88761 /* Service */,
@@ -113,6 +118,15 @@
 				2CC304122B4A85FF003BC3FC /* VideoListViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		2CF4D6EA2B4C14EB00CD4A46 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				2CF4D6EB2B4C14FD00CD4A46 /* AlertUtil.swift */,
+				2CF4D6ED2B4C158900CD4A46 /* DateFormatUtil.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,9 +201,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2CF4D6EC2B4C14FD00CD4A46 /* AlertUtil.swift in Sources */,
 				2CC304102B4A8423003BC3FC /* VideoCollectionViewCell.swift in Sources */,
 				2C6C347C2B2AC8D600B88761 /* SwiftDataService.swift in Sources */,
 				2CC304132B4A85FF003BC3FC /* VideoListViewController.swift in Sources */,
+				2CF4D6EE2B4C158900CD4A46 /* DateFormatUtil.swift in Sources */,
 				2C6C34312B21AA8700B88761 /* ViewController.swift in Sources */,
 				2C6C342D2B21AA8700B88761 /* AppDelegate.swift in Sources */,
 				2CC3040C2B499BE7003BC3FC /* VideoModel.swift in Sources */,

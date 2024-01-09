@@ -16,6 +16,7 @@ class AddController: UIViewController{
     var timeObserverToken: Any?
     var itemDuration: Double = 0
     let fileManagerService = FileManagerService.shared
+    let alertUtil = AlertUtil.shared
     var movieURL: URL!
     
     override func viewDidLoad() {
@@ -27,13 +28,11 @@ class AddController: UIViewController{
     
     
     @IBAction func saveButton(_ sender: Any) {
-        if fileManagerService.isFolderExists(){
-            fileManagerService.moveItem(sourceURL: self.movieURL)
-            print("onlyMoveItem")
-        }else{
-            fileManagerService.createFolder()
-            fileManagerService.moveItem(sourceURL: self.movieURL)
-            print("createFolder")
+        alertUtil.showSaveWithTextAlert(vc: self) { text in
+            self.fileManagerService.moveItem(sourceURL: self.movieURL)
+            let image = self.fileManagerService.takeScreenshot(sourceURL: self.movieURL)
+            guard let image = image else {return}
+            self.fileManagerService.saveFile(file: image.jpegData(compressionQuality: 0.2)!, fileName: text)
         }
     }
     

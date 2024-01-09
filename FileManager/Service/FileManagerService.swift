@@ -6,8 +6,8 @@
 //
 
 import Foundation
-import MobileCoreServices
 import AVFoundation
+import UIKit
 
 class FileManagerService{
     static let shared = FileManagerService()
@@ -38,6 +38,7 @@ class FileManagerService{
         return fileManager.fileExists(atPath: myAppDirectory.absoluteString)
     }
     
+    //MARK: ファイルの保存
     public func saveFile(file: Data, fileName: String){
         guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
             print("error: no directory")
@@ -62,7 +63,7 @@ class FileManagerService{
             }
             
             let myAppDirectory = docDirectory.appending(path: "MyAppContents")
-
+            
             // ディレクトリが存在しない場合は作成する
             if !fileManager.fileExists(atPath: myAppDirectory.path) {
                 try fileManager.createDirectory(at: myAppDirectory, withIntermediateDirectories: true, attributes: nil)
@@ -96,45 +97,57 @@ class FileManagerService{
     
     //MARK: EXPORT
     func exportMovie(sourceURL: URL, destinationURL: URL, fileType: AVFileType) -> Void {
-
+        
         Task{
             let avAsset: AVAsset = AVAsset(url: sourceURL)
             
             let videoTrack: AVAssetTrack = try await avAsset.loadTracks(withMediaType: AVMediaType.video)[0]
             let audioTracks: [AVAssetTrack] = try await avAsset.loadTracks(withMediaType: AVMediaType.audio)
             let audioTrack: AVAssetTrack? =  audioTracks.count > 0 ? audioTracks[0] : nil
-
+            
             let mainComposition : AVMutableComposition = AVMutableComposition()
-
+            
             // video と audio のコンポジショントラックをそれぞれ作成
             let compositionVideoTrack: AVMutableCompositionTrack = mainComposition.addMutableTrack(withMediaType: AVMediaType.video, preferredTrackID: kCMPersistentTrackID_Invalid)!
             let compositionAudioTrack: AVMutableCompositionTrack? = audioTrack != nil
-                ? mainComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
-                : nil
-
+            ? mainComposition.addMutableTrack(withMediaType: AVMediaType.audio, preferredTrackID: kCMPersistentTrackID_Invalid)!
+            : nil
+            
             // コンポジションの設定
             try! compositionVideoTrack.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: try await avAsset.load(.duration)), of: videoTrack, at: CMTime.zero)
             
             
             try! compositionAudioTrack?.insertTimeRange(CMTimeRangeMake(start: CMTime.zero, duration: try await avAsset.load(.duration)), of: audioTrack!, at: CMTime.zero)
-
+            
             // エクスポートするためのセッションを作成
             let assetExport = AVAssetExportSession.init(asset: mainComposition, presetName: AVAssetExportPresetMediumQuality)
-
+            
             // エクスポートするファイルの種類を設定
             assetExport?.outputFileType = fileType
-
+            
             // エクスポート先URLを設定
             assetExport?.outputURL = destinationURL
-
+            
             // エクスポート先URLに既にファイルが存在していれば、削除する (上書きはできないようなので)
             if FileManager.default.fileExists(atPath: (assetExport?.outputURL?.path)!) {
                 try! FileManager.default.removeItem(atPath: (assetExport?.outputURL?.path)!)
             }
             
             await assetExport?.export()
-
         }
-       
+    }
+    
+    public func takeScreenshot(sourceURL: URL) -> UIImage?{
+        let capturingTime: CMTime = CMTimeMakeWithSeconds(Float64(0), preferredTimescale: 1)
+        let asset: AVAsset = AVURLAsset(url: sourceURL, options: nil)
+        let imageGenerator: AVAssetImageGenerator = AVAssetImageGenerator(asset: asset)
+        var returnedImage: UIImage? = nil
+        
+        imageGenerator.generateCGImageAsynchronously(for: capturingTime) { image, time, error in
+            if let image{
+                returnedImage = UIImage(cgImage: image)
+            }
+        }
+        return returnedImage
     }
 }
