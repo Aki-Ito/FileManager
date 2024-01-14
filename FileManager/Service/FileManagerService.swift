@@ -130,6 +130,7 @@ class FileManagerService{
         }
     }
     
+    //MARK: スクリーンショットを撮る
     public func takeScreenshot(sourceURL: URL) -> UIImage?{
         let capturingTime: CMTime = CMTimeMakeWithSeconds(Float64(0), preferredTimescale: 1)
         let asset: AVAsset = AVURLAsset(url: sourceURL, options: nil)
