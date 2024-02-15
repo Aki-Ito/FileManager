@@ -8,12 +8,12 @@
 import Foundation
 import AVFoundation
 import UIKit
+import AVKit
 
 @available(iOS 17, *)
 class FileManagerService{
     static let shared = FileManagerService()
     let fileManager = FileManager.default
-    let swiftDataService = SwiftDataService.shared
     
     //MARK: フォルダを作る
     public func createFolder(){
@@ -66,6 +66,7 @@ class FileManagerService{
             self.exportMovie(sourceURL: sourceURL, destinationURL: fullPath, fileType: AVFileType.mov)
         }catch{
             print(error.localizedDescription)
+            return
         }
     }
     
@@ -87,6 +88,21 @@ class FileManagerService{
         }
         return nil
     }
+    
+    //TODO: ファイルが保存されている場所のURLのみを取得する
+    public func getFileUrl(fileName: String) -> URL?{
+        guard let docDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            print("error: no directory")
+            return nil
+        }
+        
+        let myAppDirectory = docDirectory.appending(path: "MyAppContents")
+        let fullPath = myAppDirectory.appending(path: fileName)
+        
+        return fullPath
+    }
+    
+    
     
     //MARK: EXPORT
     func exportMovie(sourceURL: URL, destinationURL: URL, fileType: AVFileType) -> Void {
@@ -144,4 +160,6 @@ class FileManagerService{
         let image = try! imageGenerator.copyCGImage(at: capturingTime, actualTime: nil)
         return UIImage(cgImage: image)
     }
+    
+    
 }

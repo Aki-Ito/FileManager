@@ -26,6 +26,7 @@ class SwiftDataService{
         }
     }
     
+    //MARK: 動画を保存
     func saveVideo(videoPath: String, imagePath: String, title: String){
         if let context{
             let savedVideo = VideoModel(id: UUID().uuidString, videoPath: videoPath, imagePath: imagePath, title: title, createdAt: Date(), memo: "")
@@ -33,6 +34,7 @@ class SwiftDataService{
         }
     }
     
+    //MARK: 動画を取得
     func fetchVideo(onCompletion: @escaping([VideoModel]?, Error?) -> Void){
         let descriptor = FetchDescriptor<VideoModel>(sortBy: [SortDescriptor<VideoModel>(\.createdAt)])
         
@@ -46,11 +48,13 @@ class SwiftDataService{
         }
     }
     
+    //MARK: 動画をアップデート
     func updateVideo(videoModel: VideoModel, newTitle: String, newMemo: String){
         videoModel.title = newTitle
         videoModel.memo = newMemo
     }
     
+    //MARK: 動画を削除
     func deleteVideo(videoModel: VideoModel){
         if let context{
             context.delete(videoModel)

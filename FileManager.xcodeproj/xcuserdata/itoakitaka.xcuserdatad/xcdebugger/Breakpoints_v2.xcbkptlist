@@ -3,4 +3,227 @@
    uuid = "22F25147-3B97-4FC2-A198-6A20491672E1"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9186D037-31CB-4FBF-9770-72C98221F0FF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Service/FileManagerService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "moveItem(sourceURL:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "9186D037-31CB-4FBF-9770-72C98221F0FF - 4f34c025d3271ded"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FileManager.FileManagerService.moveItem(sourceURL: Foundation.URL) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Service/FileManagerService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "66"
+                  endingLineNumber = "66"
+                  offsetFromSymbolStart = "1760">
+               </Location>
+               <Location
+                  uuid = "9186D037-31CB-4FBF-9770-72C98221F0FF - 4f34c025d3271d8c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FileManager.FileManagerService.moveItem(sourceURL: Foundation.URL) -&gt; Swift.Optional&lt;Foundation.URL&gt;"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Service/FileManagerService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "1528">
+               </Location>
+               <Location
+                  uuid = "9186D037-31CB-4FBF-9770-72C98221F0FF - 48de64827143e75b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "FileManager.FileManagerService.moveItem(sourceURL: Foundation.URL) -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Service/FileManagerService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1520">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6BEA64E2-C10B-4D38-9347-4C610BB1026E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8077831F-4825-4DA6-98C1-F4B97CE4261A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "165"
+            endingLineNumber = "165"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "8077831F-4825-4DA6-98C1-F4B97CE4261A - f645cb6157ffdd65"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in FileManager.AddController.getSavedData() -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "8077831F-4825-4DA6-98C1-F4B97CE4261A - c9ce80cc46e2ac3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in FileManager.AddController.getSavedData() -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "8077831F-4825-4DA6-98C1-F4B97CE4261A - 62f3e6c5bdc68167"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in FileManager.AddController.getSavedData() -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "120">
+               </Location>
+               <Location
+                  uuid = "8077831F-4825-4DA6-98C1-F4B97CE4261A - 292808f7e8b5e366"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in FileManager.AddController.getSavedData() -&gt; ()"
+                  moduleName = "FileManager"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/itoakitaka/Documents/iPhone/ios%20sample/FileManager/FileManager/Controller/AddController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "165"
+                  endingLineNumber = "165"
+                  offsetFromSymbolStart = "96">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ACB874B9-C42D-4446-A3CD-9AEDC6F8DE1A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2074ADD5-7539-4E45-ACAD-D7CD10D8606E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "166"
+            endingLineNumber = "166"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7275072D-59F2-49E6-80F4-FBEADE1C8F2A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0A9F98E3-20E5-4C59-A474-556BDFF1F53E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "FileManager/Controller/AddController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "getSavedData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -20,12 +20,15 @@ class AddController: UIViewController{
     let swiftDataService = SwiftDataService.shared
     let alertUtil = AlertUtil.shared
     var movieURL: URL!
+    //MARK: 保存された動画用Url
+    var savedMovieUrl: URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupPlayer()
         setupAudioSession()
         slider.value = 0.0
+        getSavedData()
     }
     
     
@@ -43,8 +46,8 @@ class AddController: UIViewController{
             
             let myAppDirectory = docDirectory.appending(path: "MyAppContents")
             let imagePath = myAppDirectory.appending(path: text)
-            let videoPath = myAppDirectory.appending(path: self.movieURL.lastPathComponent)
-            self.swiftDataService.saveVideo(videoPath: videoPath.path(), imagePath: imagePath.path(), title: text)
+            //FIXME: 修正
+            self.swiftDataService.saveVideo(videoPath: self.movieURL.lastPathComponent, imagePath: imagePath.lastPathComponent, title: text)
             self.getPreviousController()
         }
     }
@@ -150,6 +153,23 @@ class AddController: UIViewController{
         let preNvc = self.presentingViewController as! UINavigationController
         let vc = preNvc.viewControllers[0] as! VideoListViewController
         vc.fetchData()
+    }
+    
+    private func getSavedData(){
+        guard let movieUrl = self.movieURL else {return}
+        Task{
+            // replacePlayerItem
+            do{
+                self.movieURL = movieUrl
+                let asset = AVAsset(url: self.movieURL)
+                let duration = try await asset.load(.duration)
+                itemDuration = CMTimeGetSeconds(duration)
+                let item = AVPlayerItem(url: self.movieURL)
+                player.replaceCurrentItem(with: item)
+            }catch{
+                print("error: \(error.localizedDescription)")
+            }
+        }
     }
 }
 

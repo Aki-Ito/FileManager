@@ -12,7 +12,9 @@ import SwiftData
 @Model
 final class VideoModel{
     @Attribute(.unique) var id: String
+    //MARK: Pathの最後の要素(lastPathComponent)のみを保存するようにする
     var videoPath: String
+    //MARK: Pathの最後の要素(lastPathComponent)のみを保存するようにする
     var imagePath: String
     var title: String
     var memo: String
